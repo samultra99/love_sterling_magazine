@@ -1,24 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-	/* body {
-		transition: background-color 0.5s ease;
-	} */
+	body {
+		font-family: 'Jost', serif;
+	}
 
 	.prose code {
 		@apply text-base;
 	}
 
-	/* prose styles here */
-	.prose h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		@apply text-zinc-800 dark:text-zinc-100   !important;
+	/* Light mode - all text */
+	.prose * {
+	color: rgb(32, 0, 0) !important; 
+	}
+
+	/* Dark mode - all text */
+	html.dark .prose * {
+	color: rgb(251, 228, 228) !important; 
+	}
+
+	:root {
+    --color-main: #200000;
+	}
+
+	.dark {
+    --color-main: #fbe4e4;
 	}
 
 	html.dark .shiki,

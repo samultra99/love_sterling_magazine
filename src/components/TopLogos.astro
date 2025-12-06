@@ -1,0 +1,31 @@
+<video id='home-video' class='w-[95px] h-[95px] object-cover' muted playsinline>
+	<source src='/homepagelogos/newgildedage.mp4' type='video/mp4' />
+</video>
+
+<img
+	src='/homepagelogos/poundsterling.png'
+	alt='Pound Sterling Currency Symbol with Blood Splatter'
+	class='w-[100px] h-[100px] object-cover'
+	style='filter: blur(0.25px);'
+/>
+
+<img src='/homepagelogos/pp.png' alt='Profile Picture' class='w-[100px] h-[100px] object-cover' />
+
+<script is:inline>
+	function initVideo() {
+		const video = document.getElementById('home-video')
+		if (video) {
+			video.load()
+			video.muted = true
+			video.loop = true
+			video.play().catch((err) => console.log('Video play failed:', err))
+		}
+	}
+	// Run on initial load
+	initVideo()
+	// Run on Astro navigation
+	document.addEventListener('astro:page-load', initVideo)
+
+	// Run after Astro transitions complete
+	document.addEventListener('astro:after-swap', initVideo)
+</script>

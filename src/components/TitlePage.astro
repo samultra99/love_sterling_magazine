@@ -1,5 +1,6 @@
 ---
 import Title from './Title.astro'
+import TopLogos from './TopLogos.astro'
 import Shape from './icons/Shape.astro'
 type Props = {
 	title: string
@@ -9,6 +10,11 @@ const { title } = Astro.props
 ---
 
 <div class='flex justify-start items-center gap-2 title'>
-	<Shape />
+	<!-- This was originally <Shape> so you can add whatever here -->
+	<TopLogos />
+</div>
+
+<div class='flex justify-start items-center gap-2 title'>
+	<!-- This was originally <Shape> so you can add whatever here -->
 	<Title>{title}</Title>
 </div>
